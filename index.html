@@ -1,31 +1,56 @@
 <!DOCTYPE html>
 <html>
-<script type="text/javascript">
-function test() {
-	alert("今天已经入门了!!!");
-}
-</script>
 <head>
 	<meta charset="utf-8" />
+	<meta http-equiv="Access-Control-Allow-Origin" content="*">
 	<title>服务铃商户平台</title>
 	<link type="text/css" rel="stylesheet" href="/css/index.css" />
+	<script type="text/javascript" src="js/jquery-1.8.3.js"></script>
+	<script type="text/javascript">
+	function test() {
+		var username = $("#username").val();
+		var userpwd = $("#userpwd").val();
+		var ajaxbg = $("#background,#progressBar"); 
+		ajaxbg.hide(); 
+		$.ajax({
+			url: 'http://127.0.0.1:8888/login?'+'username='+username+'&userpwd='+userpwd,
+			dataType: 'json',
+			beforeSend: function() {
+				ajaxbg.show();
+			}
+		}).done(function(json) {
+			if (json["result"] == 'success') {
+				window.location='index.html';
+				alert('登录成功!今天任务完成！！！');
+			} else {
+				alert('登录失败: ' + json["result"]);
+			}
+			ajaxbg.hide();		
+		}).fail(function(e) {
+			alert(e);
+			ajaxbg.hide(); 
+		});
+	}
+	</script>
 </head>
 	<body>
 		<div id="top">&nbsp;</div>
 		<div id="login">
+			<div id="background" class="background" style="display: none; "></div> 
+			<div id="progressBar" class="progressBar" style="display: none; ">数据加载中，请稍等...</div> 
 			<div id="title">服务铃商户平台</div>
 	        <div class="divrow">
 			    <div class="loginlabel">用户名: </div>
 			    <div class="loginnbsp">&nbsp;</div>
 			    <div class="loginvalue">
-			    	<input type="text" name="username" style="width:50%" />
+			    	<input type="text" id="username" style="width:50%" />
 				</div>
 		    </div> 
 		    <div class="divrow">
 			    <div class="loginlabel">密码: </div>
 			    <div class="loginnbsp">&nbsp;</div>
 			    <div class="loginvalue">
-			    	<input type="password" name="username" style="width:50%">
+			    	<input type="password" id="userpwd" style="width:50%">
 				</div>
 		    </div> 
 		    <div id="loginbutton">
