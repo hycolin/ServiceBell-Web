@@ -22,19 +22,16 @@ http.createServer(function (request, response) {
 }).listen(8881);
 
 function _parseUrl(url) {
-	if (url == '/' || url == '/index.html') {
+	var path = url.substring(1);
+	var index = path.indexOf('?');
+	if (index == -1) {
+		index = path.length+1;
+	};
+	path = path.substring(0, index);
+	if (fs.existsSync(path) && fs.statSync(path).isFile()) {
 		return {
-				path: 'index.html',
-				type: 'static'
-			}
-	}
-	if (/^\/(js|css|images|static)\//.test(url)) {
-		var path = url.substring(1);
-		if (fs.existsSync(path) && fs.statSync(path).isFile()) {
-			return {
-				path: path,
-				type: 'static'
-			}
+			path: path,
+			type: 'static'
 		}
 	}
 	return null;

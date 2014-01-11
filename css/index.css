@@ -56,8 +56,10 @@ body {
 }
 
 #loginbutton {
+	margin-right: 50px;
 	margin-top:30px;
 	position:relative;
+	float: right;
 }
 
 #loginsubmit {
@@ -71,15 +73,8 @@ body {
 	height:100px;
 	margin-top:0;
 }
-#footer {
-	bottom: 0;
-	font-size: 10pt;
-	height: 35px;
-	position: absolute;
-	width: 100%;
-	text-align: center;
-}
 
+#footer {position:absolute; bottom:0; left:0; text-align:center; width:100%; height:21px; padding:0 5px;z-index:-1}
 
 .background { 
 	display: block; 
@@ -94,7 +89,7 @@ body {
 } 
 .progressBar { 
 	border: solid 2px #86A5AD; 
-	background: white url(/images/progressBar_m.gif) no-repeat 10px 10px; 
+	background: white url(./images/progressBar_m.gif) no-repeat 10px 10px; 
 } 
 .progressBar { 
 	display: block; 
@@ -112,3 +107,206 @@ body {
 	position: absolute; 
 	z-index: 2001; 
 } 
+
+.titleHeader { background:url(./images/dialog/dialogpanel.png) no-repeat;}
+
+#mainboard {
+	float: left;
+	position: relative;
+	width: 80%;
+	height: 100%;
+}
+
+#mainboard .room {
+	float: left;
+	position: relative;
+	width: 230px;
+	height: 200px;
+	border: solid 1px #86A5AD; 
+	margin: 10px 8px;
+	background: #f1f2f3;
+}
+.titleHeader {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 30px;
+	line-height:30px; 
+	font-size: 12pt;
+	text-align: center;
+	word-wrap:break-word;
+	background-position:0 -100px; 
+	background-repeat:repeat-x;
+}
+#mainboard .roomContent {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 138px;
+	overFlow-x:hidden;  
+	overFlow-y:auto;
+}
+
+.roomContent .userItem0,.roomContent .userItem1 {
+	position: relative;
+	float: left;
+	display: block;
+	width: 100%;
+	height: 32px;
+	word-wrap:break-word;
+	white-space:nowrap;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+.roomContent .userItem0 {
+	background: #e1e1e1;
+}
+
+.roomContent .userItem1 {
+	background: #f1f1f1;
+}
+
+.userItem0 img, .userItem1 img {
+	float: left;
+	position: relative;
+	display: block;
+	width: 25px;
+	height: 25px;
+}
+
+.userItem0 div, .userItem1 div {
+	float: left;
+	position: relative;
+	display: block;
+	font-size: 10pt;
+	width: 100px;
+	height: 32px;
+	line-height:32px; 
+	padding: 0 10px 0 10px;
+	word-wrap:break-word;
+	white-space:nowrap;
+}
+
+#mainboard .roomFooter {
+	position: relative;
+	float: left;
+	display: block;
+	width: 100%;
+	height: 31px;
+	line-height: 31px;
+	background-color: #dddddd;
+	border-style: solid;
+	border-color: #86A5AD;
+	border-width: 1px 0px 0px 0px;
+	text-align: left;
+}
+
+.roomFooter .roomFooterLabel 
+{
+	float: left;
+	display: block;
+	height: 31px;
+	line-height: 31px;
+	font-size: 8pt;
+}
+.roomFooter .roomFooterButton {
+	float: right;
+	display: block;
+	height: 31px;
+	margin-top: 2px;
+	margin-right: 5px;
+}
+
+#queuepanel {
+	display: block;
+	float: left;
+	position: relative;
+	width: 20%;
+	height: 100%;
+	background: white;
+	text-align: center; 
+	margin-top: 10px;
+}
+
+#queuepanel .titleHeader {
+	text-align: left;
+	padding-left: 5px;
+}
+
+#queuepanel .queueitem0,#queuepanel .queueitem1 {
+	display: block;
+	position: relative;
+	width: 100%;
+	height: 80px;
+	line-height:80px; 
+	overflow:hidden;	 
+	font-size: 12pt;
+	text-align: left;
+	word-wrap:break-word;
+	white-space:normal;
+	padding-left: 5px;
+}
+
+#queuepanel .queueitem0:hover {
+	background: yellow;
+}
+
+#queuepanel .queueitem1:hover {
+	background: yellow;
+}
+
+#queuepanel .queueitem0 {
+	background: #e1e1e1;
+}
+
+#queuepanel .queueitem1 {
+	background: #f1f1f1;
+}
+
+span { padding:0; margin:0; font-size:12px; line-height:100%; font-family:Arial, sans-serif;}
+
+.button, .button span,
+.buttonDisabled, .buttonDisabled span,
+.buttonActive, .buttonActive span,
+.button .buttonContent, .buttonHover, .buttonHover .buttonContent,
+.buttonActive .buttonContent, .buttonActiveHover, .buttonActiveHover .buttonContent,
+.buttonDisabled .buttonContent { background:url(./images/button/button_s.png) no-repeat;}
+
+.button span, .buttonDisabled span, .buttonActive span,
+.button .buttonContent, .buttonHover, .buttonHover .buttonContent,
+.buttonActive .buttonContent, .buttonDisabled .buttonContent,
+.button button, .buttonHover button,
+.buttonActive button, .buttonDisabled button { color:#183152;}
+
+.buttonDisabled span, .buttonDisabled:hover span,
+.buttonDisabled button { color:#999;}
+.buttonDisabled button { cursor:default;}
+
+.button, .buttonActive, .buttonDisabled { float:left; display:block; overflow:hidden; height:25px; padding-left:5px;}
+
+.button span, .buttonDisabled span, .buttonActive span,
+.button .buttonContent, .buttonHover, .buttonHover .buttonContent,
+.buttonActive .buttonContent, .buttonDisabled .buttonContent { float:left; display:block; overflow:hidden; height:25px; line-height:25px; font-weight:bold;}
+
+.button { background-position:0 0;}
+.button .buttonContent { padding:0 5px 0 0; background-position:100% -50px;}
+.button span { padding:0 10px 0 5px; background-position:100% -50px; cursor:pointer;}
+.button:hover { text-decoration:none; background-position:0 -100px;}
+.button:hover span { background-position:100% -150px;}
+.buttonHover { padding-left:5px; background-position:0 -100px;}
+.buttonHover .buttonContent { padding:0 5px 0 0; background-position:100% -150px;}
+
+.buttonActive { background-position:0 -200px;}
+.buttonActive .buttonContent { padding:0 5px 0 0; background-position:100% -250px;}
+.buttonActive span { padding:0 10px 0 5px; background-position:100% -250px; cursor:pointer;}
+.buttonActive:hover { text-decoration:none; background-position:0 -300px;}
+.buttonActive:hover span { background-position:100% -350px;}
+.buttonActiveHover { background-position:0 -300px;}
+.buttonActiveHover .buttonContent { padding:0 5px 0 0; background-position:100% -350px;}
+
+.buttonDisabled, .buttonDisabled:hover { text-decoration:none; background-position:0 -400px;}
+.buttonDisabled span, .buttonDisabled:hover span { padding:0 10px 0 5px; background-position:100% -450px; cursor:default;}
+.buttonDisabled .buttonContent { padding:0 5px 0 0; background-position:100% -450px;}
+
+.button button, .buttonHover button,
+.buttonActive button, .buttonDisabled button { width:auto; height:25px; margin:0; padding:0 0 5px 0; border:0; font-size:12px; font-weight:bold; background:none; cursor:pointer;}
