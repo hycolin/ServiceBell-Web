@@ -5,120 +5,15 @@
 	<meta http-equiv="Access-Control-Allow-Origin" content="*">
 	<title>服务铃商户平台</title>
 	<link type="text/css" rel="stylesheet" href="/css/index.css" />
-	
 	<script src="js/jquery-1.7.2.js" type="text/javascript"></script>
-
-	<script type="text/javascript">
-	function Room(roomId, roomName) {
-		this.roomId = roomId;
-		this.roomName = roomName;
-	};
-
-	function User(userId, userName, avatar) {
-		this.userId = userId;
-		this.userName = userName;
-		this.avatar = avatar;
-	};
-
-	var roomList = new Array(12);
-	for (var i = roomList.length - 1; i >= 0; i--) {
-		var roomName = 'A' + (i+1);
-		roomList[i] = new Room(i, roomName);
-	}; 
-
-	var userList = new Array(6);
-	for (var i = userList.length - 1; i >= 0; i--) {
-		var userName = 'test' + (i+1);
-		userList[i] = new User(i, userName, 'images/avatar/avatar' + (i % 4) + ".png");
-	};
-
-	function appendRoom(roomId, roomName) {
-		var room = "<div class='room' id='mainboard"+roomId+"'/>"
-		var roomHeader = "<div class='titleHeader'>"+roomName+"</div>";
-		var roomFooter = "<div class='roomFooter' id='roomFooter"+roomId+"'/>";
-		var roomContent = "<div class='roomContent' id='"+roomId+"'/>";
-		$("#mainboard").append(room);
-		$("#mainboard"+roomId).append(roomHeader);
-		$("#mainboard"+roomId).append(roomContent);
-		$("#mainboard"+roomId).append(roomFooter);
-
-		//footer
-		$("#roomFooter"+roomId).append("<div class='roomFooterLabel'>当前在线：10人</div>");
-		$("#roomFooter"+roomId).append("<div class='roomFooterButton'><div class='button' id='roomFooter"+roomId+"'><span>响应服务铃</span></div></div>");
-
-		return room;
-	}
-
-	function addOneUser(roomContentDocId, user, index) {
-		var userItem = "<div class='userItem"+(index%2)+"' id='userItem"+user.userId+"'/>";
-		var avatar = "<img src='"+user.avatar+"'/>";
-		var userName = "<div>"+user.userName+"</div>"
-		$(roomContentDocId).append(userItem);
-		$("#userItem"+user.userId).append(avatar);
-		$("#userItem"+user.userId).append(userName);
-	}
-
-	function test() {
-		for (var i = 0; i < roomList.length - 1; i++) {
-			var roomId = roomList[i].roomId.toString();
-			var roomName = roomList[i].roomName + "房间";
-
-			appendRoom(roomId, roomName);
-
-			if (i % 2 == 0) {
-				$("#queuepanel").append($("<div class='queueitem0' id='queuepanel"+roomId+"'>"+roomName+"</div>"));	
-			} else {
-				$("#queuepanel").append($("<div class='queueitem1' id='queuepanel"+roomId+"'>"+roomName+"</div>"));	
-			}
-
-			$("#queuepanel"+roomId).click(function() {
-				var roomId = this.id.replace('queuepanel', '');
-				var room;
-				for (var i = roomList.length - 1; i >= 0; i--) {
-					if (roomList[i].roomId == roomId) {
-						room = roomList[i];
-						break;
-					}
-				};
-				if (room) {
-					if (typeof room.checked === 'undefined') {
-						room.checked = true;	
-					} else {
-						room.checked = !room.checked;
-					}
-					var mainboardRoomId = "#mainboard"+roomId;
-					if (room.checked) {
-						// $(mainboardRoomId).css("background", "red");	
-						$(mainboardRoomId).animate({opacity:'0.2'},"normal");
-	    				$(mainboardRoomId).animate({opacity:'1.0'},"normal");
-	    				$(mainboardRoomId).animate({opacity:'0.2'},"normal");
-	    				$(mainboardRoomId).animate({opacity:'1.0'},"normal");
-					} else {
-						// $(mainboardRoomId).css("background", "#f1f2f3");
-						$(mainboardRoomId).stop();	
-					}
-				};
-			});
-		}
-		for (var j = 0; j < 3; j++) {
-			addOneUser("#"+3+".roomContent", userList[j], j);	
-		};
-
-		for (var j = 0; j < 10; j++) {
-			addOneUser("#"+1+".roomContent", userList[j], j);	
-		};
-	}
-	</script>
-
+	<script src="js/jquery.cookie.js" type="text/javascript"></script>
+	<script src="js/bell.js" type="text/javascript"></script>
 </head>
-<body scroll="no" onload="test();">
+<body>
 	<div id="mainboard"></div>
 	<div id="queuepanel">
-		<div class='titleHeader'>
-			服务铃排队一览表
-		</div>
+		<div class='titleHeader'>服务铃排队一览表</div>
 	</div>
 	<div id="footer">©2014 关于我们</div>
-</div>
 </body>
 </html>
