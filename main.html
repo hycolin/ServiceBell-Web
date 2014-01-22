@@ -4,16 +4,26 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta http-equiv="Access-Control-Allow-Origin" content="*">
 	<title>服务铃商户平台</title>
-	<link type="text/css" rel="stylesheet" href="/css/index.css" />
+	<link type="text/css" rel="stylesheet" href="css/index.css" />
 	<script src="js/jquery-1.7.2.js" type="text/javascript"></script>
 	<script src="js/jquery.cookie.js" type="text/javascript"></script>
+	<script src="js/jquery.color.js" type="text/javascript"></script>
 	<script src="js/bell.js" type="text/javascript"></script>
 </head>
 <body>
-	<div id="mainboard"></div>
-	<div id="queuepanel">
-		<div class='titleHeader'>服务铃排队一览表</div>
+	<div id='toolbar'>
+		<div>服务铃商家平台</div>
+		<div class='button' id='logout' onclick='logout()'><span>退出</span></div>
+		<div class='button' id='setting' onclick='setting()'><span>设置</span></div>
 	</div>
+	<div id='content'>
+		<div id="mainboard"></div>
+		<div id="queuepanel">
+			<div class='titleHeader'>服务铃排队一览表</div>
+			<div id="queueContent"></div>
+		</div>
+	</div>
+	
 	<div id="footer">©2014 关于我们</div>
 </body>
 </html>

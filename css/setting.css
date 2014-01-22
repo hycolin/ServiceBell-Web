@@ -8,73 +8,11 @@ html, body {
 
 body {
 	font-family: "Menlo", "consolas", "monospace";
-	font-size: 14px;
-	color: rgb(52,52,52);	
+	font-size: 14px;	
 }
 
 .hidden {
 	display: none;
-}
-
-#loginBell {
-	margin: auto;
-	width: 400px;
-	height: 200px;
-	padding: 30px 0px 30px 0px;
-	background-color: #f1f2f3;
-	border: solid 1px #86A5AD; 
-	text-align: left;
-}
-
-#title {
-	font-family: "Menlo", "consolas", "monospace";
-	font-size: 20px;	
-	position:relative;
-	margin-left: 20px;
-	margin-bottom: 30px;
-}
-
-.divrow {
-	margin-top:10px;
-	position:relative;
-	height:30px
-}
-
-.loginlabel {
-	float:left;
-	width:20%;
-	padding-top:5px;
-	text-align:right
-}
-
-.loginnbsp {
-	float:left;
-	width:2%;
-}
-
-.loginvalue {
-	float:left;
-	width:75%;
-	display:block;
-}
-
-#loginbutton {
-	margin-right: 50px;
-	margin-top:30px;
-	position:relative;
-	float: right;
-}
-
-#loginsubmit {
-	width:100px;
-	margin:0 auto;
-	display:block;
-}
-
-#top {
-	width:100%; 
-	height:100px;
-	margin-top:0;
 }
 
 #footer {position:absolute; bottom:0; left:0; text-align:center; width:100%; height:21px; padding:0 5px;z-index:-1}
@@ -133,13 +71,7 @@ body {
 	line-height: 25px;
 }
 
-#toolbar #setting {
-	float: right;
-	position: relative;
-	top: 0px;
-}
-
-#toolbar #logout {
+#toolbar #saveSetting {
 	float: right;
 	position: relative;
 	top: 0px;
@@ -153,15 +85,15 @@ body {
 #mainboard {
 	float: left;
 	position: relative;
-	width: 80%;
+	width: 100%;
 	height: 100%;
 }
 
 #mainboard .room {
 	float: left;
 	position: relative;
-	width: 230px;
-	height: 200px;
+	width: 180px;
+	height: 180px;
 	border: solid 1px #86A5AD; 
 	margin: 10px 8px;
 	background: #f1f2f3;
@@ -182,136 +114,10 @@ body {
 	position: relative;
 	display: block;
 	width: 100%;
-	height: 138px;
+	height: 150px;
 	overFlow-x:hidden;  
 	overFlow-y:auto;
-	/*background-color: rgb(149, 172, 138);*/
-}
-
-.roomContent img {
-	margin: auto;
-	position: absolute;
-	top: 0; 
-	left: 0; 
-	bottom: 0;
-	right: 0;
-	display:block;
-}
-
-.roomContent .userItem0,.roomContent .userItem1 {
-	position: relative;
-	float: left;
-	display: block;
-	width: 100%;
-	height: 32px;
-	word-wrap:break-word;
-	white-space:nowrap;
-	padding-left: 5px;
-	padding-right: 5px;
-}
-.roomContent .userItem0 {
-	/*background: rgba(225, 225, 225, 0.8);*/
-}
-
-.roomContent .userItem1 {
-	/*background: rgba(240, 240, 240, 0.2);*/
-}
-
-.userItem0 img, .userItem1 img {
-	float: left;
-	position: relative;
-	display: block;
-	width: 25px;
-	height: 25px;
-}
-
-.userItem0 div, .userItem1 div {
-	float: left;
-	position: relative;
-	display: block;
-	font-size: 10pt;
-	width: 100px;
-	height: 32px;
-	line-height:32px; 
-	padding: 0 10px 0 10px;
-	word-wrap:break-word;
-	white-space:nowrap;
-}
-
-#mainboard .roomFooter {
-	position: relative;
-	float: left;
-	display: block;
-	width: 100%;
-	height: 31px;
-	line-height: 31px;
-	/*background-color: #dddddd;*/
-	border-style: solid;
-	border-color: #86A5AD;
-	border-width: 1px 0px 0px 0px;
-	text-align: left;
-}
-
-.roomFooter .roomFooterLabel 
-{
-	float: left;
-	display: block;
-	height: 31px;
-	line-height: 31px;
-	font-size: 8pt;
-}
-.roomFooter .roomFooterButton {
-	float: right;
-	display: block;
-	height: 31px;
-	margin-top: 2px;
-	margin-right: 5px;
-}
-
-#queuepanel {
-	display: block;
-	float: left;
-	position: relative;
-	width: 19%;
-	height: 100%;
-	background: white;
-	text-align: center; 
-	margin-top: 10px;
-	border: solid 1px #86A5AD; 
-}
-
-#queuepanel .titleHeader {
 	text-align: center;
-}
-
-#queuepanel .queueitem0,#queuepanel .queueitem1 {
-	display: block;
-	position: relative;
-	width: 97%;
-	height: 50px;
-	line-height:50px; 
-	overflow:hidden;	 
-	font-size: 12pt;
-	text-align: left;
-	word-wrap:break-word;
-	white-space:normal;
-	padding-left: 5px;
-}
-
-#queuepanel .queueitem0:hover {
-	background: rgba(240, 0, 240, 0.4);
-}
-
-#queuepanel .queueitem1:hover {
-	background: rgba(240, 0, 240, 0.4);
-}
-
-#queuepanel .queueitem0 {
-	background: #e1e1e1;
-}
-
-#queuepanel .queueitem1 {
-	background: #f1f1f1;
 }
 
 span { padding:0; margin:0; font-size:12px; line-height:100%; font-family:Arial, sans-serif;}
